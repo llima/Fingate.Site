@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fingate — Em Breve</title>
+  <meta name="description" content="Fingate: a plataforma definitiva de inteligência financeira, orquestrando segurança, monitoramento e análise de risco para operações complexas em tempo real.">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --green-bright: #48c9a2;
+      --green-mid: #27a698;
+      --dark-teal: #14494b;
+      --dark-teal-deep: #11484b;
+      --bg-dark: #0a2e30;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg-dark);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Animated background grid */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(72, 201, 162, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(72, 201, 162, 0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      animation: gridMove 20s linear infinite;
+    }
+
+    @keyframes gridMove {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(60px, 60px); }
+    }
+
+    /* Glowing orbs */
+    .orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.15;
+      pointer-events: none;
+    }
+
+    .orb-1 {
+      width: 500px;
+      height: 500px;
+      background: var(--green-bright);
+      top: -150px;
+      right: -100px;
+      animation: float1 15s ease-in-out infinite;
+    }
+
+    .orb-2 {
+      width: 400px;
+      height: 400px;
+      background: var(--green-mid);
+      bottom: -100px;
+      left: -100px;
+      animation: float2 18s ease-in-out infinite;
+    }
+
+    .orb-3 {
+      width: 300px;
+      height: 300px;
+      background: var(--dark-teal);
+      top: 50%;
+      left: 50%;
+      animation: float3 12s ease-in-out infinite;
+    }
+
+    @keyframes float1 {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(-40px, 40px); }
+    }
+
+    @keyframes float2 {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(40px, -30px); }
+    }
+
+    @keyframes float3 {
+      0%, 100% { transform: translate(-50%, -50%) scale(1); }
+      50% { transform: translate(-50%, -50%) scale(1.2); }
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 2rem;
+      max-width: 680px;
+      width: 100%;
+    }
+
+    .logo-wrapper {
+      margin-bottom: 3rem;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .logo-wrapper svg {
+      width: 240px;
+      height: auto;
+    }
+
+    /* Override SVG dark fills to white for dark background */
+    .logo-wrapper svg .cls-2,
+    .logo-wrapper svg .cls-3 {
+      fill: #ffffff;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 20px;
+      border-radius: 50px;
+      border: 1px solid rgba(72, 201, 162, 0.3);
+      background: rgba(72, 201, 162, 0.08);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--green-bright);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      animation: fadeInUp 1s ease-out 0.2s both;
+    }
+
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green-bright);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      animation: fadeInUp 1s ease-out 0.4s both;
+    }
+
+    h1 span {
+      background: linear-gradient(135deg, var(--green-bright), var(--green-mid));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .description {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.6);
+      font-weight: 300;
+      margin-bottom: 3rem;
+      animation: fadeInUp 1s ease-out 0.6s both;
+    }
+
+    .notify-form {
+      display: flex;
+      gap: 12px;
+      max-width: 460px;
+      margin: 0 auto 2rem;
+      animation: fadeInUp 1s ease-out 0.8s both;
+    }
+
+    .notify-form input {
+      flex: 1;
+      padding: 14px 20px;
+      border-radius: 12px;
+      border: 1px solid rgba(72, 201, 162, 0.2);
+      background: rgba(255, 255, 255, 0.05);
+      color: #fff;
+      font-size: 0.95rem;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .notify-form input::placeholder {
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    .notify-form input:focus {
+      border-color: var(--green-bright);
+      box-shadow: 0 0 0 3px rgba(72, 201, 162, 0.15);
+    }
+
+    .notify-form button {
+      padding: 14px 28px;
+      border-radius: 12px;
+      border: none;
+      background: linear-gradient(135deg, var(--green-bright), var(--green-mid));
+      color: var(--bg-dark);
+      font-size: 0.95rem;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      white-space: nowrap;
+    }
+
+    .notify-form button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(72, 201, 162, 0.3);
+    }
+
+    .notify-form button:active {
+      transform: translateY(0);
+    }
+
+    .features {
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      animation: fadeInUp 1s ease-out 1s both;
+    }
+
+    .feature {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .feature-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 6px;
+      background: rgba(72, 201, 162, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .feature-icon svg {
+      width: 12px;
+      height: 12px;
+      stroke: var(--green-bright);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .footer {
+      position: fixed;
+      bottom: 2rem;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.25);
+      z-index: 1;
+    }
+
+    @media (max-width: 560px) {
+      .notify-form {
+        flex-direction: column;
+      }
+
+      .features {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <div class="container">
+    <div class="logo-wrapper">
+      <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272.89 72.56">
+        <defs>
+          <style>
+            .cls-1 { fill: #48c9a2; }
+            .cls-2 { fill: #ffffff; }
+            .cls-3 { fill: #ffffff; }
+            .cls-4 { fill: #27a698; }
+          </style>
+        </defs>
+        <g>
+          <path class="cls-3" d="M17.76,27.22v30.32s-11.53,0-11.53,0v-30.3s-6.24-.14-6.24-.14l.02-9,6.2-.04c.1-1.81.1-3.47.4-5.24C7.93,5.19,13.62,1.1,21.28,1c3.34-.04,6.55.55,9.46,2.36l-2.62,8.46c-1.93-.96-3.7-1.55-5.68-1.47-2.19.08-3.91,1.48-4.4,3.59-.31,1.35-.4,2.68-.22,4.1h10.27s.03,9.06.03,9.06l-10.35.09Z"/>
+          <g>
+            <path class="cls-3" d="M48.07,57.33v.25h-11.55V17.36h.25c-.07.13.09.21.25.22h10.6s0,39.65,0,39.65c.22.15.36.1.46.09Z"/>
+            <g>
+              <path class="cls-1" d="M47.38.05c.02.22-.09.4-.29.62l-9.33,10.51c-.39.44-.65.95-1.22.89l-.02-11.09L47.38.05Z"/>
+              <path class="cls-4" d="M36.55,12.08c.57.06.83-.45,1.22-.89L47.09.67c.2-.23.31-.4.29-.62.29-.02.7-.13.84.04v6.1s-11.11,6.18-11.11,6.18c-.22.12-.43.2-.53.03-.05-.08,0-.23-.03-.32Z"/>
+            </g>
+            <path class="cls-2" d="M48.07,57.33c-.11.01-.24.06-.46-.09V17.6s-10.59,0-10.59,0c-.16-.02-.31-.1-.25-.22h11.3v39.96Z"/>
+          </g>
+          <g>
+            <path class="cls-3" d="M69.32,35.82c-.14-.16-.46,0-.46.26v20.78c0,.22.09.38.17.44.07.05.18.04.29.02-3.74.52-7.59.09-11.53.24V17.44c.13-.08.2-.09.24-.09-.08.11.06.23.24.23h9.88c.17,0,.32-.04.25-.18.48,1.5,0,3.09.33,4.86,1.97-2.16,4.16-3.79,6.95-4.6,8.34-2.42,18.19,0,21.32,8.97.86,2.47,1.4,4.91,1.4,7.61l.03,23.29-11.54-.03-.02-20.5c0-5.16-1.66-10.09-7.59-10.26-2.89-.08-5.7.61-7.59,2.94-1.36,1.68-2.36,3.97-2.35,6.13Z"/>
+            <path class="cls-2" d="M69.32,35.82v21.5c-.11.02-.22.03-.29-.02-.09-.06-.18-.22-.18-.44v-20.78c0-.26.33-.42.47-.26Z"/>
+            <path class="cls-2" d="M68.39,17.41c.07.14-.08.18-.25.18h-9.88c-.17,0-.32-.12-.24-.23l10.36.05Z"/>
+          </g>
+        </g>
+        <g>
+          <g>
+            <path class="cls-3" d="M138.15,17.39c-.12.14.08.19.25.2h10.16s.1,35.45.1,35.45c0,2.56-.42,4.89-1.12,7.26-1.53,5.19-5.33,9.03-10.45,10.75-6.71,2.25-16.19,1.87-22.91-.37-2.49-.87-4.82-1.85-7.01-3.5l4.51-8.27c5.49,3.42,13.05,5.43,19.3,3.74,5.18-1.4,7.1-6.51,6.48-11.73-2.27,2.17-4.62,3.72-7.61,4.32-10.46,2.12-21.68-2.69-24.15-13.67-2.39-10.66,2.88-21.23,13.67-24.04,6.49-1.69,13.91-.7,18.46,4.7.35-1.72-.28-3.38.32-4.84ZM133.13,44.35c3.34-2.1,4.78-5.66,4.32-9.47-.39-3.23-2.59-6.31-5.94-7.67-2.9-1.17-6.22-1.2-9.12.05-3.55,1.53-5.63,5.06-5.7,8.7s1.91,7.34,5.47,9.02,7.62,1.46,10.97-.64Z"/>
+            <path class="cls-2" d="M148.56,17.59h-10.16c-.17-.01-.38-.07-.25-.2,3.62.1,7.09-.31,10.41.2Z"/>
+          </g>
+          <g>
+            <path class="cls-3" d="M176.29,57.32c-7.05,2.02-16.85.47-19.71-7.12-1.48-3.92-1.03-7.93,1.25-11.09,2.95-4.09,9.3-5.52,14.06-5.56l10.14-.08c.04-3.8-2.62-6.65-6.4-7.25-4.98-.79-9.97.58-14.38,3.39l-4.05-7.76c5.23-3.53,11.12-4.99,17.22-5.04,7.31-.05,15.13,2.28,17.88,9.69.82,2.2,1.29,4.41,1.29,6.83l.02,24.2h-10.74s-.18-4.48-.18-4.48c-1.79,2.03-3.82,3.53-6.41,4.27ZM178.91,48.6c3.08-1.94,3.5-4.81,3.02-8.02h-8.18c-3.32,0-6.91,1.38-6.72,5.06.09,1.72,1.15,3.27,2.97,3.91,2.89,1.03,6.23.74,8.91-.95Z"/>
+            <g>
+              <g>
+                <path class="cls-3" d="M272.64,40.23h-30.23c-.12.22-.1.36-.07.47,1.66,7.67,11.15,9.87,17.86,6.81,1.34-.72,2.43-1.52,3.69-2.59l6.5,6.64c-6.42,7.16-18.3,8.02-26.7,4.87-7.38-2.77-12.23-9.29-12.83-17.13-.77-10.05,4.82-19.05,14.76-21.64,9.53-2.48,20.29.27,24.92,9.55,2.03,4.08,2.79,8.65,2.1,13.02ZM261.91,33.64c-.87-4.99-4.87-8.06-9.64-7.93-4.87-.19-9.11,2.97-10.05,7.95l19.69-.02Z"/>
+                <path class="cls-2" d="M272.64,40.23c-.58.24-1.4.41-2.2.42l-28.1.06c-.02-.11-.05-.26.07-.47h30.23Z"/>
+              </g>
+              <g>
+                <path class="cls-3" d="M225.96,25.44c-.16.13-.31.33-.27.57.03.16.03.41.28.36,0,.16.03.31,0,.46-3.25.19-6.58-.37-9.71.27l-.21.21c-.67,5.24-.01,10.66-.33,16.14-.01.22.44.43.52.26,0,.85.28,1.75.62,2.59,1.4,3.53,6.52,2.71,9.17.9l3.01,8.5c-5.41,3.3-14.81,3.43-19.7-.54-3.05-2.47-4.73-6.18-4.75-10.13l-.1-17.8-6.01-.12.02-9.02,5.99-.05.05-10.18h11.59s.06,10.2.06,10.2l9.83.03c.03,2.48.16,4.97-.06,7.35Z"/>
+                <path class="cls-2" d="M216.24,43.72c-.08.17-.53-.04-.52-.26.32-5.48-.34-10.9.33-16.14.11.23.19.52.19.9v15.5Z"/>
+                <path class="cls-2" d="M225.97,26.83c-.02.08-.06.23-.27.23l-9.44.04c3.13-.64,6.46-.09,9.71-.27Z"/>
+                <path class="cls-2" d="M225.97,26.37c-.25.05-.26-.2-.28-.36-.04-.24.11-.44.27-.57v.93Z"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </div>
+
+    <div class="badge">
+      <span class="badge-dot"></span>
+      Em Breve
+    </div>
+
+    <h1>Inteligência financeira <span>em tempo real</span></h1>
+
+    <p class="description">
+      A plataforma definitiva que orquestra segurança, monitoramento e análise de risco
+      para operações financeiras complexas.
+    </p>
+
+    <form class="notify-form" onsubmit="handleSubmit(event)">
+      <input type="email" placeholder="Seu melhor e-mail" required aria-label="E-mail para notificação">
+      <button type="submit">Avise-me</button>
+    </form>
+
+    <div class="features">
+      <div class="feature">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        Segurança
+      </div>
+      <div class="feature">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        Monitoramento
+      </div>
+      <div class="feature">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        Análise de Risco
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">&copy; 2026 Fingate. Todos os direitos reservados.</div>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      const input = e.target.querySelector('input');
+      const button = e.target.querySelector('button');
+      const email = input.value;
+
+      button.textContent = 'Registrado!';
+      button.style.background = 'var(--green-mid)';
+      input.value = '';
+      input.disabled = true;
+      button.disabled = true;
+
+      setTimeout(() => {
+        button.textContent = 'Avise-me';
+        button.style.background = '';
+        input.disabled = false;
+        button.disabled = false;
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
