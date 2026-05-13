@@ -1,0 +1,574 @@
+/* ============================================================
+   SOBRE — estilos específicos da página /sobre
+   ============================================================ */
+
+/* Item "Sobre" ativo no header ----------------------------------- */
+.site-header__nav > a.is-active {
+  color: var(--esmeralda-profundo);
+  font-weight: 600;
+}
+.site-header__nav > a.is-active::after {
+  transform: scaleX(1);
+  background: var(--esmeralda-medio);
+}
+
+/* Header sobre hero escuro --------------------------------------- */
+.site-header__logo .logo--light { display: none; }
+
+.site-header:not(.is-scrolled) .logo--dark { display: none; }
+.site-header:not(.is-scrolled) .logo--light { display: block; }
+
+.site-header:not(.is-scrolled) .site-header__nav > a {
+  color: rgba(255, 255, 255, 0.85);
+}
+.site-header:not(.is-scrolled) .nav-mega__trigger {
+  color: rgba(255, 255, 255, 0.85);
+}
+.site-header:not(.is-scrolled) .nav-mega.is-open .nav-mega__trigger {
+  color: var(--menta);
+}
+.site-header:not(.is-scrolled) .site-header__nav > a:hover {
+  color: var(--branco);
+}
+.site-header:not(.is-scrolled) .site-header__nav > a.is-active {
+  color: var(--menta);
+}
+.site-header:not(.is-scrolled) .site-header__nav > a.is-active::after {
+  background: var(--menta);
+}
+.site-header:not(.is-scrolled) .site-header__nav > a::after {
+  background: var(--menta);
+}
+
+.site-header:not(.is-scrolled) .site-header__cta {
+  background: var(--menta);
+  color: var(--esmeralda-profundo);
+  box-shadow: var(--glow-menta);
+}
+.site-header:not(.is-scrolled) .site-header__cta:hover {
+  background: #2EB78D;
+}
+
+.site-header:not(.is-scrolled) .menu-toggle span,
+.site-header:not(.is-scrolled) .menu-toggle span::before,
+.site-header:not(.is-scrolled) .menu-toggle span::after {
+  background: var(--branco);
+}
+
+/* Breadcrumb ----------------------------------------------------- */
+.breadcrumb {
+  position: relative;
+  z-index: 2;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 84px var(--pad-x) 0;
+  font-size: var(--fs-micro);
+  color: var(--cinza-600);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.breadcrumb a {
+  color: var(--cinza-600);
+  text-decoration: none;
+  transition: color var(--d-fast) var(--ease-out);
+}
+.breadcrumb a:hover { color: var(--esmeralda-profundo); }
+.breadcrumb span[aria-current="page"] {
+  color: var(--cinza-900);
+  font-weight: 500;
+}
+.breadcrumb span[aria-hidden="true"] {
+  opacity: 0.4;
+}
+
+/* ============================================================
+   HERO — Sobre (fundo escuro com "estratos/camadas" próprios da
+   identidade Sobre — diferente do hero da Fundação, mas no mesmo
+   sistema visual. Conteúdo alinhado à direita.)
+   ============================================================ */
+.hero-sobre {
+  position: relative;
+  background: var(--esmeralda-profundo);
+  color: var(--branco);
+  overflow: hidden;
+  margin-top: -100px;
+  padding-block: clamp(170px, 18vw, 240px) clamp(96px, 12vw, 168px);
+}
+.hero-sobre::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(700px 520px at 90% 30%, rgba(72,201,162,0.18), transparent 60%),
+    radial-gradient(900px 700px at 0% 100%, rgba(20,113,112,0.42), transparent 55%);
+}
+.hero-sobre::after { content: none; }
+
+/* "Estratos" — bandas horizontais inclinadas que sugerem a camada que
+   a Fingate ocupa entre construir e comprar. */
+.hero-sobre__strata {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  transform: skewY(-6deg);
+  transform-origin: 0% 50%;
+}
+.hero-sobre__band {
+  position: absolute;
+  left: -10%;
+  right: -10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(72,201,162,0.22) 30%, rgba(72,201,162,0.22) 70%, transparent);
+}
+.hero-sobre__band--1 { top: 18%; opacity: 0.45; }
+.hero-sobre__band--2 { top: 38%; height: 2px; background: linear-gradient(90deg, transparent, rgba(72,201,162,0.36) 40%, rgba(72,201,162,0.36) 60%, transparent); }
+.hero-sobre__band--3 { top: 58%; opacity: 0.32; }
+.hero-sobre__band--4 { top: 78%; height: 2px; background: linear-gradient(90deg, transparent, rgba(72,201,162,0.28) 40%, rgba(72,201,162,0.28) 60%, transparent); opacity: 0.6; }
+
+.hero-sobre__inner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--max-w);
+  margin-inline: auto;
+  padding-inline: var(--pad-x);
+}
+
+.hero-sobre__copy {
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+.hero-sobre .pill {
+  background: rgba(72,201,162,0.14);
+  color: var(--menta);
+  border: 1px solid rgba(72,201,162,0.24);
+  box-shadow: none;
+}
+.hero-sobre h1 {
+  font-size: var(--fs-display);
+  color: var(--branco);
+  line-height: 1.02;
+  margin: 28px 0;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+  text-align: left;
+  max-width: 18ch;
+}
+.hero-sobre h1 .accent {
+  color: var(--menta);
+  display: block;
+  font-weight: 600;
+}
+.hero-sobre__lead {
+  font-size: var(--fs-lead);
+  color: rgba(255, 255, 255, 0.82);
+  max-width: 60ch;
+  line-height: 1.55;
+  margin: 0 0 28px;
+  text-align: left;
+}
+.hero-sobre__seal {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(72,201,162,0.18);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.62);
+  max-width: 480px;
+}
+.hero-sobre__seal::before {
+  content: "";
+  width: 6px; height: 6px;
+  background: var(--menta);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--menta);
+  flex-shrink: 0;
+}
+.hero-sobre__seal strong { color: rgba(255,255,255,0.88); font-weight: 600; }
+
+@media (max-width: 1024px) {
+  .hero-sobre__copy { max-width: 100%; }
+}
+
+/* ============================================================
+   SEÇÕES — base
+   ============================================================ */
+.sec {
+  position: relative;
+  padding-block: clamp(72px, 9vw, 128px);
+}
+.sec--dark {
+  background: var(--esmeralda-profundo);
+  color: var(--branco);
+}
+.sec--light { background: var(--branco); }
+.sec--gray  { background: var(--cinza-claro); }
+
+.sec__head {
+  max-width: 760px;
+  margin: 0 auto var(--s-9);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sec__head .pill { margin-bottom: 20px; }
+.sec__head h2 {
+  font-size: var(--fs-h2);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  font-weight: 600;
+  margin: 0 0 var(--s-5);
+}
+.sec--dark .sec__head h2 { color: var(--branco); }
+.sec__head h2 .accent { color: var(--esmeralda-medio); display: block; font-weight: 600; }
+.sec--dark .sec__head h2 .accent { color: var(--menta); }
+.sec__head p {
+  font-size: var(--fs-lead);
+  line-height: 1.6;
+  color: var(--cinza-600);
+  max-width: 70ch;
+  margin: 0 auto;
+}
+.sec--dark .sec__head p { color: rgba(255, 255, 255, 0.78); }
+
+/* ============================================================
+   §5.4 POSICIONAMENTO — 4 cards comparativos
+   ============================================================ */
+.pos__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--s-5);
+}
+.pos__card {
+  background: var(--cinza-claro);
+  border: 1px solid transparent;
+  border-radius: var(--r-lg);
+  padding: var(--s-7) var(--s-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+  position: relative;
+  transition: transform var(--d-base) var(--ease-out), box-shadow var(--d-base) var(--ease-out);
+}
+.pos__card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.pos__card-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--cinza-500);
+  text-transform: uppercase;
+}
+.pos__card h3 {
+  font-family: var(--font-titulo);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--cinza-900);
+  letter-spacing: -0.01em;
+  margin: 0;
+  line-height: 1.2;
+}
+.pos__card p {
+  font-size: var(--fs-micro);
+  line-height: 1.6;
+  color: var(--cinza-600);
+  margin: 0;
+}
+.pos__card--win {
+  background: linear-gradient(160deg, rgba(72, 201, 162, 0.14), rgba(72, 201, 162, 0.03));
+  border-color: var(--esmeralda-medio);
+  box-shadow: 0 16px 40px -20px rgba(39, 166, 152, 0.35);
+}
+.pos__card--win .pos__card-num { color: var(--esmeralda-medio); }
+.pos__card--win h3 { color: var(--esmeralda-profundo); }
+.pos__card--win p { color: var(--cinza-900); }
+.pos__card-badge {
+  position: absolute;
+  top: var(--s-4);
+  right: var(--s-4);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--esmeralda-profundo);
+  background: var(--menta);
+  padding: 4px 10px;
+  border-radius: var(--r-pill);
+  font-weight: 600;
+}
+
+/* ============================================================
+   §5.5 PILARES — 3 cards sobre fundo escuro
+   ============================================================ */
+.pilares__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s-5);
+}
+.pilar-card {
+  background: var(--branco);
+  border-radius: var(--r-lg);
+  padding: var(--s-8) var(--s-7);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+  box-shadow: 0 18px 40px -28px rgba(0, 0, 0, 0.4);
+  transition: transform var(--d-base) var(--ease-out), box-shadow var(--d-base) var(--ease-out);
+}
+.pilar-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 28px 56px -24px rgba(0, 0, 0, 0.5);
+}
+.pilar-card__num {
+  font-family: var(--font-titulo);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--esmeralda-medio);
+  margin-bottom: 4px;
+}
+.pilar-card h3 {
+  font-family: var(--font-titulo);
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--cinza-900);
+  line-height: 1.2;
+  margin: 0;
+}
+.pilar-card p {
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  color: var(--cinza-600);
+  margin: 0;
+}
+
+/* ============================================================
+   §5.6 VALORES — 5 cards layout 3+2
+   ============================================================ */
+.valores__grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: var(--s-5);
+}
+.valor-card {
+  background: var(--cinza-claro);
+  border-radius: var(--r-lg);
+  padding: var(--s-7) var(--s-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+  border: 1px solid transparent;
+  transition: transform var(--d-base) var(--ease-out), border-color var(--d-base) var(--ease-out);
+}
+.valor-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(39, 166, 152, 0.22);
+}
+.valor-card:nth-child(-n+3) { grid-column: span 2; }
+.valor-card:nth-child(4)    { grid-column: 2 / span 2; }
+.valor-card:nth-child(5)    { grid-column: 4 / span 2; }
+.valor-card__num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--esmeralda-medio);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.valor-card h3 {
+  font-family: var(--font-titulo);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--cinza-900);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+.valor-card p {
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  color: var(--cinza-600);
+  margin: 0;
+}
+
+/* ============================================================
+   §5.7 TIME — placeholder transparente
+   ============================================================ */
+.time__placeholder {
+  background: var(--branco);
+  border: 1px solid var(--cinza-200);
+  border-radius: var(--r-lg);
+  padding: var(--s-9) var(--s-7);
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--s-4);
+}
+.time__placeholder img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  margin-bottom: var(--s-3);
+  opacity: 0.95;
+}
+.time__placeholder p {
+  margin: 0;
+}
+.time__placeholder p.time__primary {
+  font-family: var(--font-titulo);
+  font-weight: 500;
+  font-size: var(--fs-lead);
+  color: var(--cinza-900);
+  opacity: 0.85;
+}
+.time__placeholder p.time__secondary {
+  font-size: var(--fs-body);
+  color: var(--cinza-600);
+  opacity: 0.78;
+  max-width: 42ch;
+  line-height: 1.55;
+}
+
+/* ============================================================
+   §5.8 MANIFESTO — 4 cards 2x2 sobre fundo escuro
+   ============================================================ */
+.manifesto__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--s-5);
+}
+.manifesto-card {
+  background: var(--branco);
+  border-radius: var(--r-lg);
+  padding: var(--s-8) var(--s-7);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+  box-shadow: 0 18px 40px -28px rgba(0, 0, 0, 0.45);
+  transition: transform var(--d-base) var(--ease-out);
+}
+.manifesto-card:hover {
+  transform: translateY(-3px);
+}
+.manifesto-card h3 {
+  font-family: var(--font-titulo);
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--cinza-900);
+  line-height: 1.2;
+  margin: 0;
+}
+.manifesto-card p {
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  color: var(--cinza-600);
+  margin: 0;
+  max-width: 50ch;
+}
+
+/* ============================================================
+   §5.9 CTA FINAL
+   ============================================================ */
+.cta-final__layout {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: var(--s-9);
+  align-items: center;
+}
+.cta-final__copy h2 {
+  font-size: var(--fs-h2);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  font-weight: 600;
+  margin: 0 0 var(--s-5);
+  color: var(--cinza-900);
+}
+.cta-final__copy h2 .accent {
+  color: var(--esmeralda-medio);
+  display: block;
+  font-weight: 600;
+}
+.cta-final__copy p {
+  font-size: var(--fs-lead);
+  line-height: 1.6;
+  color: var(--cinza-600);
+  margin: 0 0 var(--s-7);
+  max-width: 60ch;
+}
+.cta-final__visual {
+  background: linear-gradient(160deg, var(--esmeralda-profundo), var(--lap-3, #147170));
+  border-radius: var(--r-lg);
+  padding: var(--s-9) var(--s-7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--s-5);
+  position: relative;
+  overflow: hidden;
+}
+.cta-final__visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 20%, rgba(72, 201, 162, 0.22), transparent 60%);
+  pointer-events: none;
+}
+.cta-final__visual img {
+  position: relative;
+  width: 180px;
+  height: auto;
+  filter: drop-shadow(0 14px 36px rgba(72, 201, 162, 0.32));
+}
+.cta-final__visual-cap {
+  position: relative;
+  font-family: var(--font-mono);
+  font-size: var(--fs-caption);
+  color: rgba(255, 255, 255, 0.78);
+  text-align: center;
+  letter-spacing: 0.04em;
+  max-width: 30ch;
+  margin: 0;
+}
+
+/* ============================================================
+   RESPONSIVO
+   ============================================================ */
+@media (max-width: 1024px) {
+  .pos__grid { grid-template-columns: repeat(2, 1fr); }
+  .pilares__grid { grid-template-columns: 1fr; }
+  .valores__grid { grid-template-columns: repeat(2, 1fr); }
+  .valores__grid .valor-card,
+  .valores__grid .valor-card:nth-child(-n+3),
+  .valores__grid .valor-card:nth-child(4),
+  .valores__grid .valor-card:nth-child(5) { grid-column: auto; }
+  .cta-final__layout { grid-template-columns: 1fr; gap: var(--s-7); }
+}
+
+@media (max-width: 720px) {
+  .breadcrumb { padding-top: 80px; }
+  .pos__grid { grid-template-columns: 1fr; }
+  .valores__grid { grid-template-columns: 1fr; }
+  .manifesto__grid { grid-template-columns: 1fr; }
+  .hero-sobre h1 { font-size: clamp(2.2rem, 9vw, 3rem); }
+  .sec__head { margin-bottom: var(--s-7); }
+}
