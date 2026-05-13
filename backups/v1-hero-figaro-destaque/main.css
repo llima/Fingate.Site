@@ -688,87 +688,16 @@ p { margin: 0; color: var(--cinza-600); }
 }
 .hero__screen {
   position: absolute;
-  margin: 0;
-  padding: 0;
   border-radius: 10px;
   background: var(--branco);
   border: 1px solid rgba(17, 72, 75, 0.08);
   box-shadow:
     0 20px 40px -22px rgba(17, 72, 75, 0.28),
     0 8px 16px -10px rgba(17, 72, 75, 0.16);
-  overflow: visible;
-  transition:
-    transform var(--d-med, 320ms) var(--ease-out, cubic-bezier(.2,.7,.2,1)),
-    box-shadow var(--d-med, 320ms) var(--ease-out, cubic-bezier(.2,.7,.2,1)),
-    z-index 0s;
-  transform-origin: center center;
-  cursor: pointer;
-}
-.hero__screen > img {
-  display: block;
-  width: 100%;
-  height: 100%;
   object-fit: cover;
   object-position: top left;
-  border-radius: inherit;
+  overflow: hidden;
 }
-.hero__tip {
-  position: absolute;
-  left: 50%;
-  bottom: calc(100% + 12px);
-  transform: translate(-50%, 6px);
-  min-width: 180px;
-  max-width: 240px;
-  padding: 10px 14px;
-  background: var(--esmeralda-profundo);
-  color: var(--branco);
-  border-radius: 8px;
-  box-shadow: 0 16px 32px -16px rgba(17, 72, 75, 0.5);
-  font-size: 12px;
-  line-height: 1.45;
-  text-align: left;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity var(--d-fast, 180ms) var(--ease-out, ease), transform var(--d-fast, 180ms) var(--ease-out, ease);
-  z-index: 20;
-}
-.hero__tip strong {
-  display: block;
-  font-family: var(--font-titulo);
-  font-weight: 600;
-  font-size: 13px;
-  color: var(--menta);
-  margin-bottom: 2px;
-  letter-spacing: -0.01em;
-}
-.hero__tip span {
-  display: block;
-  color: rgba(255, 255, 255, 0.85);
-}
-.hero__tip::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -5px;
-  width: 10px;
-  height: 10px;
-  background: var(--esmeralda-profundo);
-  transform: translateX(-50%) rotate(45deg);
-  border-radius: 1px;
-}
-.hero__screen:hover .hero__tip {
-  opacity: 1;
-  transform: translate(-50%, 0);
-}
-.hero__screen:hover {
-  transform: scale(1.18);
-  z-index: 10;
-  box-shadow:
-    0 44px 80px -28px rgba(17, 72, 75, 0.5),
-    0 20px 36px -14px rgba(17, 72, 75, 0.3);
-}
-.hero__screen--card1:hover { transform: translateX(-50%) scale(1.18); }
-.hero__screen--figaro:hover { transform: translate(-50%, -50%) scale(1.14); }
 .hero__screen--maestro {
   left: 6%;
   top: 18%;
