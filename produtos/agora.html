@@ -1,0 +1,607 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ágora · PLD que termina em RIF, não em planilha. — Fingate</title>
+  <meta name="description" content="Ferramenta de PLD da Fingate. Conduz cada caso suspeito por um ciclo formal de 4 etapas até o RIF entregue ao COAF. Construído sobre Circular BACEN 3.978 e Lei 9.613.">
+  <link rel="canonical" href="https://fingate.com.br/produtos/agora.html">
+
+  <meta property="og:title" content="Ágora · PLD que termina em RIF, não em planilha. — Fingate">
+  <meta property="og:description" content="Ferramenta de PLD da Fingate. Conduz cada caso suspeito por um ciclo formal de 4 etapas até o RIF entregue ao COAF. Construído sobre Circular BACEN 3.978 e Lei 9.613.">
+  <meta property="og:url" content="https://fingate.com.br/produtos/agora.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/png" href="../assets/images/gema-full-color.png">
+
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/produto.css">
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"Ágora","url":"https://fingate.com.br/produtos/agora.html","description":"Ferramenta de PLD da Fingate. Conduz cada caso suspeito por um ciclo formal de 4 etapas até o RIF entregue ao COAF. Construído sobre Circular BACEN 3.978 e Lei 9.613.","category":"Compliance regulatório","brand":{"@type":"Brand","name":"Fingate"},"manufacturer":{"@type":"Organization","name":"Fingate Tecnologia e Desenvolvimento Financeiro","url":"https://fingate.com.br"},"audience":{"@type":"Audience","audienceType":"CCO, Head de PLD, Auditoria interna e CTO de instituições financeiras"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Fingate","item":"https://fingate.com.br/"},{"@type":"ListItem","position":2,"name":"Produtos","item":"https://fingate.com.br/produtos"},{"@type":"ListItem","position":3,"name":"Ágora"}]}</script>
+</head>
+<body data-screen-label="Ágora">
+
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 12h14M13 5l7 7-7 7"/>
+      </symbol>
+      <symbol id="i-wa" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.25-.1-.45-.15-.65.15-.2.3-.75.95-.9 1.15-.15.2-.35.2-.65.05-.3-.15-1.25-.46-2.4-1.48-.9-.8-1.5-1.78-1.67-2.08-.18-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.07-.15-.65-1.6-.9-2.2-.24-.57-.48-.5-.65-.5l-.55-.02c-.18 0-.5.08-.75.38-.25.3-1 1-1 2.43s1.03 2.82 1.18 3c.15.2 2.03 3.1 4.92 4.34 1.78.76 2.45.83 3.33.7.53-.07 1.7-.7 1.95-1.37.24-.67.24-1.25.17-1.37-.08-.13-.27-.2-.57-.35zM12 2C6.5 2 2 6.5 2 12c0 1.95.56 3.77 1.52 5.31L2.05 22l4.83-1.27A9.95 9.95 0 0 0 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2z"/>
+      </symbol>
+      <symbol id="p-maestro" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 22 L20 8"/>
+        <circle cx="22" cy="6" r="2.2" fill="currentColor"/>
+        <path d="M4 24c0 1.5 1 2.4 2.4 2.4S8.8 25.5 8.8 24 7.8 21.6 6.4 21.6 4 22.5 4 24z"/>
+        <path d="M10 18l-4 4"/>
+      </symbol>
+      <symbol id="p-figaro" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round">
+        <path d="M6 22h20l-2-3H8z" fill="currentColor" opacity="0.85"/>
+        <path d="M10 19V8h12v11z" fill="currentColor"/>
+        <path d="M11 6h10v2H11z" fill="currentColor" opacity="0.7"/>
+      </symbol>
+      <symbol id="p-tempo" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M7 26L11 6h10l4 20z"/>
+        <path d="M16 22V8"/>
+        <circle cx="16" cy="6" r="1.5" fill="currentColor"/>
+      </symbol>
+      <symbol id="p-libreto" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M16 8C13 6 9 5.5 5 6v18c4-.5 8 0 11 2"/>
+        <path d="M16 8c3-2 7-2.5 11-2v18c-4-.5-8 0-11 2"/>
+        <path d="M16 8v18"/>
+      </symbol>
+      <symbol id="p-agora" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 12l12-6 12 6"/>
+        <path d="M7 12v12M12 12v12M20 12v12M25 12v12"/>
+        <path d="M4 26h24"/>
+      </symbol>
+      <symbol id="p-atlas" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+        <circle cx="16" cy="16" r="11"/>
+        <ellipse cx="16" cy="16" rx="5" ry="11"/>
+        <path d="M5 16h22"/>
+      </symbol>
+      <symbol id="p-mosaico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round">
+        <rect x="5" y="5" width="9" height="9" fill="currentColor" opacity="0.85"/>
+        <rect x="18" y="5" width="9" height="9"/>
+        <rect x="5" y="18" width="9" height="9"/>
+        <rect x="18" y="18" width="9" height="9" fill="currentColor" opacity="0.55"/>
+      </symbol>
+      <symbol id="p-trama" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+        <circle cx="9" cy="9" r="2"/>
+        <circle cx="23" cy="9" r="2"/>
+        <circle cx="9" cy="23" r="2"/>
+        <circle cx="23" cy="23" r="2"/>
+        <circle cx="16" cy="16" r="2.5"/>
+        <path d="M11 9h10M11 23h10M9 11v10M23 11v10M11 11l3 3M21 11l-3 3M11 21l3-3M21 21l-3-3"/>
+      </symbol>
+      <symbol id="p-signum" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 26L26 6"/>
+        <path d="M22 4l6 6-4 4-6-6z" fill="currentColor" opacity="0.4"/>
+        <path d="M5 27l3-1-2-2z" fill="currentColor"/>
+      </symbol>
+    </defs>
+  </svg>
+
+
+
+  <header class="site-header" role="banner">
+    <div class="site-header__inner">
+      <a href="../index.html" class="site-header__logo" aria-label="Fingate, página inicial">
+        <img class="logo--dark" src="../assets/images/fingate-principal.png" alt="Fingate">
+        <img class="logo--light" src="../assets/images/fingate-fundo-escuro.png" alt="Fingate">
+      </a>
+      <nav class="site-header__nav" aria-label="Principal">
+        <a href="../index.html">Home</a>
+        <a href="../sobre/index.html">Sobre</a>
+        <div class="nav-mega">
+          <button class="nav-mega__trigger is-active" aria-haspopup="true" aria-expanded="false" aria-controls="produtos-mega">
+            Produtos
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="nav-mega__panel" id="produtos-mega" role="menu">
+            <div class="nav-mega__inner">
+              <a class="nav-mega__feature" href="figaro.html">
+                <span class="nav-mega__feature-thumb" aria-hidden="true">
+                  <svg viewBox="0 0 32 32"><use href="#p-figaro"/></svg>
+                </span>
+                <span class="nav-mega__feature-body">
+                  <span class="nav-mega__feature-title">Fígaro</span>
+                  <span class="nav-mega__feature-desc">Agente de IA, co-piloto de inteligência financeira. Correlaciona alertas e gera briefings.</span>
+                  <span class="nav-mega__feature-cta">Saiba mais
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                </span>
+              </a>
+              <div class="nav-mega__cols">
+                <div class="nav-mega__col">
+                  <div class="nav-mega__label">Governança e decisão</div>
+                  <a class="nav-mega__item" href="maestro.html">
+                    <span class="nav-mega__icon"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#p-maestro"/></svg></span>
+                    <span class="nav-mega__txt">
+                      <span class="nav-mega__name">Maestro</span>
+                      <span class="nav-mega__desc">Orquestração de fluxos, alçadas e aprovações.</span>
+                    </span>
+                  </a>
+                  <a class="nav-mega__item" href="mosaico.html">
+                    <span class="nav-mega__icon"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#p-mosaico"/></svg></span>
+                    <span class="nav-mega__txt">
+                      <span class="nav-mega__name">Mosaico</span>
+                      <span class="nav-mega__desc">Motor de crédito com policy-as-code.</span>
+                    </span>
+                  </a>
+                </div>
+                <div class="nav-mega__col">
+                  <div class="nav-mega__label">Inteligência e formalização</div>
+                  <a class="nav-mega__item" href="libreto.html">
+                    <span class="nav-mega__icon"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#p-libreto"/></svg></span>
+                    <span class="nav-mega__txt">
+                      <span class="nav-mega__name">Libreto</span>
+                      <span class="nav-mega__desc">Repositório e editor de documentação corporativa.</span>
+                    </span>
+                  </a>
+                  <a class="nav-mega__item" href="signum.html">
+                    <span class="nav-mega__icon"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#p-signum"/></svg></span>
+                    <span class="nav-mega__txt">
+                      <span class="nav-mega__name">Signum</span>
+                      <span class="nav-mega__desc">Assinatura digital ICP-Brasil e LTA.</span>
+                    </span>
+                  </a>
+                </div>
+                <div class="nav-mega__col">
+                  <div class="nav-mega__label">Monitoramento e antifraude</div>
+                  <a class="nav-mega__item" href="tempo.html">
+                    <span class="nav-mega__icon"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#p-tempo"/></svg></span>
+                    <span class="nav-mega__txt">
+                      <span class="nav-mega__name">Tempo</span>
+                      <span class="nav-mega__desc">Monitoramento transacional com IA embarcada.</span>
+                    </span>
+                  </a>
+                  <a class="nav-mega__item" href="trama.html">
+                    <span class="nav-mega__icon"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#p-trama"/></svg></span>
+                    <span class="nav-mega__txt">
+                      <span class="nav-mega__name">Trama</span>
+                      <span class="nav-mega__desc">Antifraude em grafo com camadas combinadas.</span>
+                    </span>
+                  </a>
+                </div>
+                <div class="nav-mega__col">
+                  <div class="nav-mega__label">Compliance regulatório</div>
+                  <a class="nav-mega__item is-active" href="agora.html" aria-current="page">
+                    <span class="nav-mega__icon"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#p-agora"/></svg></span>
+                    <span class="nav-mega__txt">
+                      <span class="nav-mega__name">Ágora</span>
+                      <span class="nav-mega__desc">PLD que termina em RIF, não em planilha.</span>
+                    </span>
+                  </a>
+                  <a class="nav-mega__item" href="atlas.html">
+                    <span class="nav-mega__icon"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#p-atlas"/></svg></span>
+                    <span class="nav-mega__txt">
+                      <span class="nav-mega__name">Atlas</span>
+                      <span class="nav-mega__desc">Quebra de sigilo como processo, com hash retido.</span>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="nav-mega__footer">
+              <a href="index.html" class="nav-mega__cta">Ver portfólio completo
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <a class="nav-mega__expert"
+                 href="https://wa.me/5511936210224?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20de%20produto%20no%20site%20da%20Fingate%20e%20quero%20conversar%20com%20a%20equipe."
+                 target="_blank" rel="noopener noreferrer"
+                 data-origin="header_mega_agora">
+                Fale com um especialista
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <a href="../fundacao/index.html">Fundação</a>
+      </nav>
+      <a class="btn site-header__cta"
+         href="https://wa.me/5511936210224?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Fingate%20e%20quero%20conversar%20com%20a%20equipe."
+         target="_blank" rel="noopener noreferrer"
+         data-origin="header_agora">
+        <svg aria-hidden="true"><use href="#i-wa"/></svg>
+        Falar no WhatsApp
+      </a>
+      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false"><span></span></button>
+    </div>
+    <div class="mobile-menu" aria-hidden="true">
+      <a href="../index.html">Home</a>
+      <a href="../sobre/index.html">Sobre</a>
+      <a href="index.html" class="is-active">Produtos</a>
+      <a href="../fundacao/index.html">Fundação</a>
+      <a class="btn"
+         href="https://wa.me/5511936210224?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Fingate%20e%20quero%20conversar%20com%20a%20equipe."
+         target="_blank" rel="noopener noreferrer"
+         data-origin="header_mobile_agora">
+        <svg aria-hidden="true"><use href="#i-wa"/></svg>
+        Falar no WhatsApp
+      </a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ====================================================== -->
+    <!-- §1 HERO                                                -->
+    <!-- ====================================================== -->
+    <section class="prod-hero" aria-labelledby="hero-headline" data-screen-label="01 Hero">
+      <nav class="prod-crumb" aria-label="Trilha">
+        <a href="../index.html">Fingate</a>
+        <span class="sep">/</span>
+        <a href="index.html">Produtos</a>
+        <span class="sep">/</span>
+        <span aria-current="page">Ágora</span>
+      </nav>
+      <div class="prod-hero__inner">
+        <div class="prod-hero__copy">
+          <span class="pill">
+            <img class="pill-gem" src="../assets/images/gema-full-color.png" alt="" aria-hidden="true">
+            Compliance regulatório
+            <span class="prod-status prod-status--dev">Em desenvolvimento</span>
+          </span>
+          <h1 id="hero-headline">Cada caso suspeito,<span class="accent">um ciclo formal até o COAF.</span></h1>
+          <p class="prod-hero__lead">O Ágora é a ferramenta de PLD da Fingate. Conduz cada caso suspeito por um ciclo formal de detecção, análise, encaminhamento e RIF ao COAF, com governança herdada do Maestro e trilha auditável por evento.</p>
+          <div class="prod-hero__ctas">
+            <a class="btn btn--menta"
+               href="https://wa.me/5511936210224?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20do%20%C3%81gora%20no%20site%20da%20Fingate%20e%20quero%20falar%20com%20a%20equipe%20de%20PLD."
+               target="_blank" rel="noopener noreferrer"
+               data-origin="produto_agora">
+              <svg aria-hidden="true"><use href="#i-wa"/></svg>
+              Falar no WhatsApp
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+            <a class="link-secondary" href="#diferenciais">
+              Conhecer a arquitetura
+              <svg aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+          </div>
+          <div class="prod-hero__micro">Compatível com Circular BACEN 3.978 e Lei 9.613 · RIF assistido para o COAF · Alertas qualificados do Tempo entram direto no ciclo · Trilha por evento desde a detecção</div>
+          <p class="prod-hero__selo">Construído sobre a <strong>governança do Maestro</strong>, em produção no ecossistema Fingate.</p>
+        </div>
+        <div class="prod-hero__visual" aria-hidden="true">
+          <div class="prod-hero__icon">
+            <svg viewBox="0 0 32 32"><use href="#p-agora"/></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================== -->
+    <!-- §2 CREDIBILITY BAND                                    -->
+    <!-- ====================================================== -->
+    <section class="prod-band" aria-label="Faixa de credibilidade" data-screen-label="02 Credibilidade">
+      <div class="prod-band__inner">
+        <p class="prod-band__quote">A ferramenta de PLD que conduz cada caso suspeito do alerta comportamental ao RIF entregue ao COAF, sob trilha auditável por evento.</p>
+        <ul class="prod-band__tags"><li>Circular BACEN 3.978</li><li>Lei 9.613</li><li>COAF</li><li>BACEN</li></ul>
+        
+      </div>
+    </section>
+
+    <!-- ====================================================== -->
+    <!-- §3 PROBLEM                                              -->
+    <!-- ====================================================== -->
+    <section class="prod-sec prod-sec--light" aria-labelledby="problem-headline" data-screen-label="03 O problema">
+      <div class="container">
+        <header class="prod-sec__head">
+          <span class="pill">
+            <img class="pill-gem" src="../assets/images/gema-full-color.png" alt="" aria-hidden="true">
+            O problema
+          </span>
+          <h2 id="problem-headline">PLD não termina no alerta.<span class="accent">Termina no RIF auditado.</span></h2>
+        </header>
+        <p style="max-width:68ch;margin:0 auto;font-size:var(--fs-lead);line-height:1.7;color:var(--cinza-700);text-align:left;">Quando PLD vive entre planilha de Excel, e-mail interno e ofício avulso, o COAF recebe RIF montado de memória, a auditoria recebe fragmento, e o caso suspeito atravessa três sistemas até virar comunicação formal. A regulação não pergunta pelo seu volume de alertas. Pergunta pelo ciclo: como o caso chegou, como foi analisado, quem decidiu encaminhar, quando saiu o RIF. O Ágora foi desenhado para que cada caso percorra esse ciclo registrado por evento, com decisão sob alçada e RIF gerado com contexto íntegro.</p>
+      </div>
+    </section>
+
+    <!-- ====================================================== -->
+    <!-- §4 HOW IT WORKS                                         -->
+    <!-- ====================================================== -->
+    <section class="prod-sec prod-sec--gray" aria-labelledby="how-headline" data-screen-label="04 Como funciona">
+      <div class="container">
+        <header class="prod-sec__head">
+          <span class="pill">
+            <img class="pill-gem" src="../assets/images/gema-full-color.png" alt="" aria-hidden="true">
+            Como funciona
+          </span>
+          <h2 id="how-headline">Do alerta ao RIF,<span class="accent">em quatro etapas registradas.</span></h2>
+        </header>
+        <div class="prod-steps">
+          <article class="prod-step">
+            <span class="prod-step__num"></span>
+            <h3>Recebe ou detecta o caso.</h3>
+            <p>Alertas qualificados pelo Tempo entram direto no ciclo, com contexto comportamental e prioridade. A detecção embarcada do Ágora também abre caso por padrão atípico em CPF, CNPJ, valor, volumetria ou contraparte recorrente.</p>
+          </article><article class="prod-step">
+            <span class="prod-step__num"></span>
+            <h3>Conduz a análise.</h3>
+            <p>O analista trabalha o caso com timeline, documentos anexados e regra que o originou. Cada decisão fica registrada por evento, com comentário obrigatório em mudança de status. A alçada herdada do Maestro define quem aprova o encaminhamento.</p>
+          </article><article class="prod-step">
+            <span class="prod-step__num"></span>
+            <h3>Encaminha ou arquiva.</h3>
+            <p>A decisão termina em arquivamento justificado ou em RIF formal para o COAF. O RIF é gerado com contexto íntegro do caso, segue o protocolo previsto e fica vinculado à trilha original.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================== -->
+    <!-- §5 PILLARS                                              -->
+    <!-- ====================================================== -->
+    <section class="prod-sec prod-sec--light" aria-labelledby="pillars-headline" data-screen-label="05 Pilares">
+      <div class="container">
+        <header class="prod-sec__head">
+          <span class="pill">
+            <img class="pill-gem" src="../assets/images/gema-full-color.png" alt="" aria-hidden="true">
+            Pilares de valor
+          </span>
+          <h2 id="pillars-headline">Quatro princípios<span class="accent">que estruturam o ciclo.</span></h2>
+        </header>
+        <div class="prod-pillars">
+          <article class="prod-pillar">
+            <span class="prod-pillar__tag">01</span>
+            <h3>Ciclo formal, do alerta ao RIF.</h3>
+            <p>Quatro etapas previstas em norma, cada uma registrada por evento. Caso não termina em planilha.</p>
+          </article><article class="prod-pillar">
+            <span class="prod-pillar__tag">02</span>
+            <h3>Detecção comportamental embarcada.</h3>
+            <p>Modelos pré-treinados que aprendem o padrão de cada cliente, em conjunto com regras configuráveis que o time de PLD já sabe.</p>
+          </article><article class="prod-pillar">
+            <span class="prod-pillar__tag">03</span>
+            <h3>Governança herdada do Maestro.</h3>
+            <p>Áreas, hierarquia, alçada e ausência temporária reaproveitadas do cadastro central, sem reconfigurar o ciclo a cada mudança.</p>
+          </article><article class="prod-pillar">
+            <span class="prod-pillar__tag">04</span>
+            <h3>RIF assistido para o COAF.</h3>
+            <p>Relatório gerado com contexto íntegro do caso, trilha mantida indefinidamente para inspeção do BACEN e da auditoria interna.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================== -->
+    <!-- §6 CASES OF USE                                         -->
+    <!-- ====================================================== -->
+    <section class="prod-sec prod-sec--gray" aria-labelledby="cases-headline" data-screen-label="06 Casos de uso">
+      <div class="container">
+        <header class="prod-sec__head">
+          <span class="pill">
+            <img class="pill-gem" src="../assets/images/gema-full-color.png" alt="" aria-hidden="true">
+            Casos de uso
+          </span>
+          <h2 id="cases-headline">Um único ciclo<span class="accent">para o PLD que sua operação precisa.</span></h2>
+        </header>
+        <ul class="prod-cases">
+          <li><strong>PLD do correntista:</strong> alertas comportamentais e regras configuráveis sobre CPF e CNPJ da base, evoluindo para caso formal com timeline e decisão sob alçada.</li><li><strong>PLD da Cabine (contas reserva):</strong> monitoramento dedicado das contas operacionais da própria instituição, com regras separadas e mesmo padrão de ciclo.</li><li><strong>Triagem inicial pós-Tempo:</strong> alertas qualificados pelo painel de monitoramento entram no ciclo do Ágora com contexto comportamental e prioridade, sem retrabalho.</li><li><strong>Investigação assistida:</strong> caso com timeline, documentos, regra que originou, comentário obrigatório em mudança de status e potencialização pelo Fígaro para resumir o histórico.</li><li><strong>Geração de RIF para o COAF:</strong> relatório formal montado com contexto do caso e trilha íntegra, dentro do protocolo de submissão do órgão.</li><li><strong>Auditoria interna do ciclo de PLD:</strong> rastreabilidade por evento, versionamento de regras, justificativa atrelada a cada decisão.</li><li><strong>Resposta à fiscalização do BACEN:</strong> histórico do ciclo apresentado de forma contínua, do alerta original ao RIF entregue.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ====================================================== -->
+    <!-- §7 DIFFERENTIALS                                        -->
+    <!-- ====================================================== -->
+    <section id="diferenciais" class="prod-sec prod-sec--light" aria-labelledby="diff-headline" data-screen-label="07 Diferenciais">
+      <div class="container">
+        <header class="prod-sec__head">
+          <span class="pill">
+            <img class="pill-gem" src="../assets/images/gema-full-color.png" alt="" aria-hidden="true">
+            Diferenciais
+          </span>
+          <h2 id="diff-headline">O que muda quando PLD<span class="accent">é processo formal, não fila plana.</span></h2>
+        </header>
+        <div class="prod-diff">
+          <article class="prod-diff__block">
+            <span class="prod-diff__tag">Bloco A</span>
+            <h3>Ciclo, não tela.</h3>
+            <p>O Ágora trata PLD como o que a regulação espera: um processo de quatro etapas com começo, meio e fim. O analista enxerga o caso, não uma lista de alertas soltos.</p>
+          </article><article class="prod-diff__block">
+            <span class="prod-diff__tag">Bloco B</span>
+            <h3>Construído sobre regulação brasileira.</h3>
+            <p>Compatibilidade com a Circular BACEN 3.978 e a Lei 9.613 desde o desenho. RIF segue o protocolo do COAF. A operação fala a língua da fiscalização sem tradução.</p>
+          </article><article class="prod-diff__block">
+            <span class="prod-diff__tag">Bloco C</span>
+            <h3>Encaixe operacional via Maestro.</h3>
+            <p>Alçada, área, hierarquia e ausência temporária herdadas do cadastro central. Cobertura entre analistas, mudança de responsabilidade e exceções de aprovação acontecem sem reconfigurar o ciclo.</p>
+          </article><article class="prod-diff__block">
+            <span class="prod-diff__tag">Bloco D</span>
+            <h3>Pontes nativas com Tempo e Atlas.</h3>
+            <p>Alertas qualificados entram do Tempo. Quando o caso evolui para ofício de quebra de sigilo, segue para o Atlas. O ciclo nunca quebra ao atravessar produto.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================== -->
+    <!-- §8 GOVERNANCE                                           -->
+    <!-- ====================================================== -->
+    <section class="prod-sec prod-sec--gray" aria-labelledby="gov-headline" data-screen-label="08 Governança">
+      <div class="container">
+        <header class="prod-sec__head">
+          <span class="pill">
+            <img class="pill-gem" src="../assets/images/gema-full-color.png" alt="" aria-hidden="true">
+            Governança e auditoria
+          </span>
+          <h2 id="gov-headline">Cada decisão registrada.<span class="accent">Cada RIF rastreável.</span></h2>
+        </header>
+        <div class="prod-gov">
+          <p class="prod-gov__copy">Cada caso carrega timeline por evento, com a regra que o originou, o analista que tomou cada decisão, a alçada que aprovou o encaminhamento, a justificativa anexa e o RIF gerado. O histórico se mantém íntegro mesmo após arquivamento ou comunicação formal ao COAF. Quando o caso evolui para ofício de quebra de sigilo, a ponte com o Atlas liga a resposta formal ao ciclo original sem retrabalho.</p>
+          <ul class="prod-gov__list"><li>Trilha de auditoria contínua, por evento.</li><li>Comentário obrigatório em mudança de status do caso.</li><li>Alçada de aprovação para encaminhamento, herdada do Maestro.</li><li>Versionamento da regra que originou o caso.</li><li>RIF gerado com contexto íntegro e protocolo do COAF.</li><li>Compatibilidade com Circular BACEN 3.978, Lei 9.613 e fluxos COAF.</li><li>Integração nativa com Tempo (upstream) e Atlas (quando o caso vira ofício).</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================== -->
+    <!-- §9 ECOSYSTEM (dark, anchor quote)                       -->
+    <!-- ====================================================== -->
+    <section class="prod-sec prod-sec--dark" aria-labelledby="eco-headline" data-screen-label="09 Ecossistema">
+      <div class="container">
+        <header class="prod-sec__head">
+          <span class="pill pill--on-dark">
+            <img class="pill-gem" src="../assets/images/gema-full-color.png" alt="" aria-hidden="true">
+            Encaixe no ecossistema
+          </span>
+          <h2 id="eco-headline">O Ágora fecha o ciclo.<span class="accent">Não começa nem termina sozinho.</span></h2>
+        </header>
+        <p class="prod-eco__copy">O Ágora recebe alertas qualificados do <a href="tempo.html">Tempo</a>, herda áreas, hierarquia e alçada do <a href="maestro.html">Maestro</a>, encaminha para o <a href="atlas.html">Atlas</a> quando o caso evolui para ofício de quebra de sigilo, e é potencializado pelo <a href="figaro.html">Fígaro</a> como camada de IA generativa que assiste o analista na investigação. A documentação do ciclo (políticas, manuais de PLD, modelos de RIF) pode ficar registrada no <a href="libreto.html">Libreto</a>, sob o mesmo plano de controle.</p>
+        <blockquote class="prod-eco__quote">
+          <p>PLD que termina em RIF, não em planilha.</p>
+        </blockquote>
+        <div class="prod-eco__chips" aria-label="Outros produtos da família">
+    <a class="prod-eco__chip" href="maestro.html">
+      <span class="prod-eco__chip-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#p-maestro"/></svg></span>
+      Maestro
+    </a>
+    <a class="prod-eco__chip" href="mosaico.html">
+      <span class="prod-eco__chip-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#p-mosaico"/></svg></span>
+      Mosaico
+    </a>
+    <a class="prod-eco__chip" href="tempo.html">
+      <span class="prod-eco__chip-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#p-tempo"/></svg></span>
+      Tempo
+    </a>
+    <a class="prod-eco__chip" href="trama.html">
+      <span class="prod-eco__chip-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#p-trama"/></svg></span>
+      Trama
+    </a>
+    <a class="prod-eco__chip" href="atlas.html">
+      <span class="prod-eco__chip-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#p-atlas"/></svg></span>
+      Atlas
+    </a>
+    <a class="prod-eco__chip" href="figaro.html">
+      <span class="prod-eco__chip-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#p-figaro"/></svg></span>
+      Fígaro
+    </a>
+    <a class="prod-eco__chip" href="libreto.html">
+      <span class="prod-eco__chip-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#p-libreto"/></svg></span>
+      Libreto
+    </a>
+    <a class="prod-eco__chip" href="signum.html">
+      <span class="prod-eco__chip-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#p-signum"/></svg></span>
+      Signum
+    </a></div>
+      </div>
+    </section>
+
+    <!-- ====================================================== -->
+    <!-- §10 FAQ                                                 -->
+    <!-- ====================================================== -->
+    <section class="prod-sec prod-sec--light" aria-labelledby="faq-headline" data-screen-label="10 FAQ">
+      <div class="container">
+        <header class="prod-sec__head">
+          <span class="pill">
+            <img class="pill-gem" src="../assets/images/gema-full-color.png" alt="" aria-hidden="true">
+            Perguntas frequentes
+          </span>
+          <h2 id="faq-headline">Como o Ágora<span class="accent">funciona na prática.</span></h2>
+        </header>
+        <div class="prod-faq__list">
+          <details class="prod-faq__item">
+            <summary>O Ágora substitui o sistema de PLD que já tenho?</summary>
+            <p>Substitui ou coexiste, conforme o caso. Costuma começar substituindo o módulo de PLD genérico do core bancário e coexistir com regras internas que o time de compliance já carrega.</p>
+          </details><details class="prod-faq__item">
+            <summary>Como o Ágora se conecta ao COAF?</summary>
+            <p>O RIF é gerado dentro do Ágora com contexto íntegro do caso e segue o protocolo previsto pelo órgão. A trilha do ciclo fica vinculada ao RIF submetido, disponível para fiscalização.</p>
+          </details><details class="prod-faq__item">
+            <summary>Como funciona a detecção comportamental dentro do Ágora?</summary>
+            <p>Modelos pré-treinados aprendem o padrão de cada cliente e cada conta. Operam em conjunto com regras configuráveis. O time de compliance não precisa montar pipeline de modelo nem rodar reciclagem.</p>
+          </details><details class="prod-faq__item">
+            <summary>Em quanto tempo o Ágora entra em produção?</summary>
+            <p>Workshop de calibragem com o seu time de PLD define regras, alçadas e fluxo de encaminhamento. Implantação típica em semanas, não meses. A detecção comportamental opera no dia 1 da integração.</p>
+          </details><details class="prod-faq__item">
+            <summary>Como o Ágora dialoga com o Tempo e o Atlas?</summary>
+            <p>O Tempo qualifica alertas transacionais com prioridade e contexto comportamental. Quando o alerta vira investigação formal, migra para o Ágora. Quando o caso evolui para ofício de quebra de sigilo, segue para o Atlas. O ciclo atravessa os três produtos sem retrabalho.</p>
+          </details><details class="prod-faq__item">
+            <summary>O Ágora cobre a fiscalização do BACEN?</summary>
+            <p>Sim. A trilha de auditoria por evento mantém o histórico íntegro do ciclo, do alerta original ao RIF entregue. Compatível com a Circular BACEN 3.978 e a Lei 9.613.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================== -->
+    <!-- §11 CTA FINAL                                           -->
+    <!-- ====================================================== -->
+    <section class="prod-cta" aria-labelledby="cta-headline" data-screen-label="11 CTA">
+      <div class="container">
+        <div class="prod-cta__inner">
+          <span class="pill">
+            <img class="pill-gem" src="../assets/images/gema-full-color.png" alt="" aria-hidden="true">
+            Próximo passo
+          </span>
+          <h2 id="cta-headline">Coloque o ciclo de PLD<span class="accent">sob trilha auditável.</span></h2>
+          <p>Em 30 minutos no WhatsApp, você sai com um mapa do ciclo do Ágora aplicado à sua operação, do alerta comportamental ao RIF entregue ao COAF.</p>
+          <a class="btn btn--menta"
+             href="https://wa.me/5511936210224?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20do%20%C3%81gora%20no%20site%20da%20Fingate%20e%20quero%20falar%20com%20a%20equipe%20de%20PLD."
+             target="_blank" rel="noopener noreferrer"
+             data-origin="produto_agora_cta">
+            <svg aria-hidden="true"><use href="#i-wa"/></svg>
+            Falar no WhatsApp
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="site-footer__top">
+        <div class="site-footer__brand">
+          <img src="../assets/images/fingate-fundo-escuro.png" alt="Fingate">
+          <p>A camada utilitária modular do sistema financeiro brasileiro.</p>
+        </div>
+        <div class="site-footer__col">
+          <h4>Produtos</h4>
+          <ul>
+            <li><a href="maestro.html">Maestro</a></li>
+            <li><a href="figaro.html">Fígaro</a></li>
+            <li><a href="tempo.html">Tempo</a></li>
+            <li><a href="libreto.html">Libreto</a></li>
+            <li><a href="agora.html" aria-current="page">Ágora</a></li>
+            <li><a href="atlas.html">Atlas</a></li>
+            <li><a href="mosaico.html">Mosaico</a></li>
+            <li><a href="trama.html">Trama</a></li>
+            <li><a href="signum.html">Signum</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <h4>Institucional</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../sobre/index.html">Sobre</a></li>
+            <li><a href="index.html">Portfólio</a></li>
+            <li><a href="../fundacao/index.html">Fundação</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <h4>Contato</h4>
+          <ul>
+            <li>
+              <a href="https://wa.me/5511936210224?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Fingate%20e%20quero%20conversar%20com%20a%20equipe."
+                 target="_blank" rel="noopener noreferrer"
+                 data-origin="footer_agora">WhatsApp Business</a>
+            </li>
+            <li><a href="https://www.linkedin.com/company/fingate" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="#">Política de Privacidade</a></li>
+            <li><a href="#">Termos de Uso</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <span>Fingate Tecnologia e Desenvolvimento Financeiro · CNPJ 08.033.252/0001-29 · São Paulo, SP</span>
+        <span>© 2026 Fingate. Todos os direitos reservados.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,607 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mosaico · Decisão de crédito que sua política reconhece. — Fingate</title>
+  <meta name="description" content="Motor de análise e originação de crédito da Fingate. Policy-as-code. Bureau, Open Finance e dados internos no mesmo motor. Auditoria por evento.">
+  <link rel="canonical" href="https://fingate.com.br/produtos/mosaico.html">
+
+  <meta property="og:title" content="Mosaico · Decisão de crédito que sua política reconhece. — Fingate">
+  <meta property="og:description" content="Motor de análise e originação de crédito da Fingate. Policy-as-code. Bureau, Open Finance e dados internos no mesmo motor. Auditoria por evento.">
+  <meta property="og:url" content="https://fingate.com.br/produtos/mosaico.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/png" href="../assets/images/gema-full-color.png">
+
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/produto.css">
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"Mosaico","url":"https://fingate.com.br/produtos/mosaico.html","description":"Motor de análise e originação de crédito da Fingate. Policy-as-code. Bureau, Open Finance e dados internos no mesmo motor. Auditoria por evento.","category":"Governança e decisão","brand":{"@type":"Brand","name":"Fingate"},"manufacturer":{"@type":"Organization","name":"Fingate Tecnologia e Desenvolvimento Financeiro","url":"https://fingate.com.br"},"audience":{"@type":"Audience","audienceType":"Head de Crédito, CRO, CTO e Head de Originação de instituições financeiras"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Fingate","item":"https://fingate.com.br/"},{"@type":"ListItem","position":2,"name":"Produtos","item":"https://fingate.com.br/produtos"},{"@type":"ListItem","position":3,"name":"Mosaico"}]}</script>
+</head>
+<body data-screen-label="Mosaico">
+
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 12h14M13 5l7 7-7 7"/>
+      </symbol>
+      <symbol id="i-wa" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.25-.1-.45-.15-.65.15-.2.3-.75.95-.9 1.15-.15.2-.35.2-.65.05-.3-.15-1.25-.46-2.4-1.48-.9-.8-1.5-1.78-1.67-2.08-.18-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.07-.15-.65-1.6-.9-2.2-.24-.57-.48-.5-.65-.5l-.55-.02c-.18 0-.5.08-.75.38-.25.3-1 1-1 2.43s1.03 2.82 1.18 3c.15.2 2.03 3.1 4.92 4.34 1.78.76 2.45.83 3.33.7.53-.07 1.7-.7 1.95-1.37.24-.67.24-1.25.17-1.37-.08-.13-.27-.2-.57-.35zM12 2C6.5 2 2 6.5 2 12c0 1.95.56 3.77 1.52 5.31L2.05 22l4.83-1.27A9.95 9.95 0 0 0 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2z"/>
+      </symbol>
+      <symbol id="p-maestro" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 22 L20 8"/>
+        <circle cx="22" cy="6" r="2.2" fill="currentColor"/>
+        <path d="M4 24c0 1.5 1 2.4 2.4 2.4S8.8 25.5 8.8 24 7.8 21.6 6.4 21.6 4 22.5 4 24z"/>
+        <path d="M10 18l-4 4"/>
+      </symbol>
+      <symbol id="p-figaro" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round">
+        <path d="M6 22h20l-2-3H8z" fill="currentColor" opacity="0.85"/>
+        <path d="M10 19V8h12v11z" fill="currentColor"/>
+        <path d="M11 6h10v2H11z" fill="currentColor" opacity="0.7"/>
+      </symbol>
+      <symbol id="p-tempo" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M7 26L11 6h10l4 20z"/>
+        <path d="M16 22V8"/>
+        <circle cx="16" cy="6" r="1.5" fill="currentColor"/>
+      </symbol>
+      <symbol id="p-libreto" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M16 8C13 6 9 5.5 5 6v18c4-.5 8 0 11 2"/>
+        <path d="M16 8c3-2 7-2.5 11-2v18c-4-.5-8 0-11 2"/>
+        <path d="M16 8v18"/>
+      </symbol>
+      <symbol id="p-agora" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 12l12-6 12 6"/>
+        <path d="M7 12v12M12 12v12M20 12v12M25 12v12"/>
+        <path d="M4 26h24"/>
+      </symbol>
+      <symbol id="p-atlas" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+        <circle cx="16" cy="16" r="11"/>
+        <ellipse cx="16" cy="16" rx="5" ry="11"/>
+        <path d="M5 16h22"/>
+      </symbol>
+      <symbol id="p-mosaico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round">
+        <rect x="5" y="5" width="9" height="9" fill="currentColor" opacity="0.85"/>
+        <rect x="18" y="5" width="9" height="9"/>
+        <rect x="5" y="18" width="9" height="9"/>
+        <rect x="18" y="18" width="9" height="9" fill="currentColor" opacity="0.55"/>
+      </symbol>
+      <symbol id="p-trama" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+        <circle cx="9" cy="9" r="2"/>
+        <circle cx="23" cy="9" r="2"/>
+        <circle cx="9" cy="23" r="2"/>
+        <circle cx="23" cy="23" r="2"/>
+        <circle cx="16" cy="16" r="2.5"/>
+        <path d="M11 9h10M11 23h10M9 11v10M23 11v10M11 11l3 3M21 11l-3 3M11 21l3-3M21 21l-3-3"/>
+      </symbol>
+      <symbol id="p-signum" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 26L26 6"/>
+        <path d="M22 4l6 6-4 4-6-6z" fill="currentColor" opacity="0.4"/>
+        <path d="M5 27l3-1-2-2z" fill="currentColor"/>
+      </symbol>
+    </defs>
+  </svg>
+
+
+
+  <header class="site-header" role="banner">
+    <div class="site-header__inner">
+      <a href="../index.html" class="site-header__logo" aria-label="Fingate, página inicial">
+        <img class="logo--dark" src="../assets/images/fingate-principal.png" alt="Fingate">
+        <img class="logo--light" src="../assets/images/fingate-fundo-escuro.png" alt="Fingate">
+      </a>
+      <nav class="site-header__nav" aria-label="Principal">
+        <a href="../index.html">Home</a>
+        <a href="../sobre/index.html">Sobre</a>
+        <div class="nav-mega">
+          <button class="nav-mega__trigger is-active" aria-haspopup="true" aria-expanded="false" aria-controls="produtos-mega">
+            Produtos
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="nav-mega__panel" id="produtos-mega" role="menu">
+            <div class="nav-mega__inner">
+              <a class="nav-mega__feature" href="figaro.html">
+                <span class="nav-mega__feature-thumb" aria-hidden="true">
+                  <svg viewBox="0 0 32 32"><use href="#p-figaro"/></svg>
+                </span>
+                <span class="nav-mega__feature-body">
+                  <span class="nav-mega__feature-title">Fígaro</span>
+                  <span class="nav-mega__feature-desc">Agente de IA, co-piloto de inteligência financeira. Correlaciona alertas e gera briefings.</span>
+                  <span class="nav-mega__feature-cta">Saiba mais
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                </span>
+              </a>
+              <div class="nav-mega__cols">
+                <div class="nav-mega__col">
+                  <div class="nav-mega__label">Governança e decisão</div>
+                  <a class="nav-mega__item" href="maestro.html">
+                    <span class="nav-mega__icon"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#p-maestro"/></svg></span>
+                    <span class="nav-mega__txt">
+                      <span class="nav-mega__name">Maestro</span>
+                      <span class="nav-mega__desc">Orquestração de fluxos, alçadas e aprovações.</span>
+                    </span>
+                  </a>
+                  <a class="nav-mega__item is-active" href="mosaico.html" aria-current="page">
+                    <span class="nav-mega__icon"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#p-mosaico"/></svg></span>
+                    <span class="nav-mega__txt">
+                      <span class="nav-mega__name">Mosaico</span>
+                      <span class="nav-mega__desc">Motor de crédito com policy-as-code.</span>
+                    </span>
+                  </a>
+                </div>
+                <div class="nav-mega__col">
+                  <div class="nav-mega__label">Inteligência e formalização</div>
+                  <a class="nav-mega__item" href="libreto.html">
+                    <span class="nav-mega__icon"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#p-libreto"/></svg></span>
+                    <span class="nav-mega__txt">
+                      <span class="nav-mega__name">Libreto</span>
+                      <span class="nav-mega__desc">Repositório e editor de documentação corporativa.</span>
+                    </span>
+                  </a>
+                  <a class="nav-mega__item" href="signum.html">
+                    <span class="nav-mega__icon"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#p-signum"/></svg></span>
+                    <span class="nav-mega__txt">
+                      <span class="nav-mega__name">Signum</span>
+                      <span class="nav-mega__desc">Assinatura digital ICP-Brasil e LTA.</span>
+                    </span>
+                  </a>
+                </div>
+                <div class="nav-mega__col">
+                  <div class="nav-mega__label">Monitoramento e antifraude</div>
+                  <a class="nav-mega__item" href="tempo.html">
+                    <span class="nav-mega__icon"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#p-tempo"/></svg></span>
+                    <span class="nav-mega__txt">
+                      <span class="nav-mega__name">Tempo</span>
+                      <span class="nav-mega__desc">Monitoramento transacional com IA embarcada.</span>
+                    </span>
+                  </a>
+                  <a class="nav-mega__item" href="trama.html">
+                    <span class="nav-mega__icon"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#p-trama"/></svg></span>
+                    <span class="nav-mega__txt">
+                      <span class="nav-mega__name">Trama</span>
+                      <span class="nav-mega__desc">Antifraude em grafo com camadas combinadas.</span>
+                    </span>
+                  </a>
+                </div>
+                <div class="nav-mega__col">
+                  <div class="nav-mega__label">Compliance regulatório</div>
+                  <a class="nav-mega__item" href="agora.html">
+                    <span class="nav-mega__icon"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#p-agora"/></svg></span>
+                    <span class="nav-mega__txt">
+                      <span class="nav-mega__name">Ágora</span>
+                      <span class="nav-mega__desc">PLD que termina em RIF, não em planilha.</span>
+                    </span>
+                  </a>
+                  <a class="nav-mega__item" href="atlas.html">
+                    <span class="nav-mega__icon"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#p-atlas"/></svg></span>
+                    <span class="nav-mega__txt">
+                      <span class="nav-mega__name">Atlas</span>
+                      <span class="nav-mega__desc">Quebra de sigilo como processo, com hash retido.</span>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="nav-mega__footer">
+              <a href="index.html" class="nav-mega__cta">Ver portfólio completo
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <a class="nav-mega__expert"
+                 href="https://wa.me/5511936210224?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20de%20produto%20no%20site%20da%20Fingate%20e%20quero%20conversar%20com%20a%20equipe."
+                 target="_blank" rel="noopener noreferrer"
+                 data-origin="header_mega_mosaico">
+                Fale com um especialista
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <a href="../fundacao/index.html">Fundação</a>
+      </nav>
+      <a class="btn site-header__cta"
+         href="https://wa.me/5511936210224?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Fingate%20e%20quero%20conversar%20com%20a%20equipe."
+         target="_blank" rel="noopener noreferrer"
+         data-origin="header_mosaico">
+        <svg aria-hidden="true"><use href="#i-wa"/></svg>
+        Falar no WhatsApp
+      </a>
+      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false"><span></span></button>
+    </div>
+    <div class="mobile-menu" aria-hidden="true">
+      <a href="../index.html">Home</a>
+      <a href="../sobre/index.html">Sobre</a>
+      <a href="index.html" class="is-active">Produtos</a>
+      <a href="../fundacao/index.html">Fundação</a>
+      <a class="btn"
+         href="https://wa.me/5511936210224?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Fingate%20e%20quero%20conversar%20com%20a%20equipe."
+         target="_blank" rel="noopener noreferrer"
+         data-origin="header_mobile_mosaico">
+        <svg aria-hidden="true"><use href="#i-wa"/></svg>
+        Falar no WhatsApp
+      </a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ====================================================== -->
+    <!-- §1 HERO                                                -->
+    <!-- ====================================================== -->
+    <section class="prod-hero" aria-labelledby="hero-headline" data-screen-label="01 Hero">
+      <nav class="prod-crumb" aria-label="Trilha">
+        <a href="../index.html">Fingate</a>
+        <span class="sep">/</span>
+        <a href="index.html">Produtos</a>
+        <span class="sep">/</span>
+        <span aria-current="page">Mosaico</span>
+      </nav>
+      <div class="prod-hero__inner">
+        <div class="prod-hero__copy">
+          <span class="pill">
+            <img class="pill-gem" src="../assets/images/gema-full-color.png" alt="" aria-hidden="true">
+            Governança e decisão
+            <span class="prod-status prod-status--dev">Em desenvolvimento</span>
+          </span>
+          <h1 id="hero-headline">Decisão de crédito<span class="accent">que sua política reconhece.</span></h1>
+          <p class="prod-hero__lead">O Mosaico recebe a política de crédito como código versionado, combina bureau, Open Finance e dados internos no mesmo motor, e registra cada decisão como evento auditável.</p>
+          <div class="prod-hero__ctas">
+            <a class="btn btn--menta"
+               href="https://wa.me/5511936210224?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20do%20Mosaico%20no%20site%20da%20Fingate%20e%20quero%20falar%20com%20a%20equipe%20de%20cr%C3%A9dito."
+               target="_blank" rel="noopener noreferrer"
+               data-origin="produto_mosaico">
+              <svg aria-hidden="true"><use href="#i-wa"/></svg>
+              Falar no WhatsApp
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+            <a class="link-secondary" href="#diferenciais">
+              Conhecer a arquitetura
+              <svg aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+          </div>
+          <div class="prod-hero__micro">Policy-as-code · Open Finance nativo · Auditoria por evento · Modelo padrão ou proprietário</div>
+          <p class="prod-hero__selo">Calibrado para <strong>BACEN, Open Finance e LGPD</strong> desde a primeira decisão.</p>
+        </div>
+        <div class="prod-hero__visual" aria-hidden="true">
+          <div class="prod-hero__icon">
+            <svg viewBox="0 0 32 32"><use href="#p-mosaico"/></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================== -->
+    <!-- §2 CREDIBILITY BAND                                    -->
+    <!-- ====================================================== -->
+    <section class="prod-band" aria-label="Faixa de credibilidade" data-screen-label="02 Credibilidade">
+      <div class="prod-band__inner">
+        <p class="prod-band__quote">O motor de crédito que coloca política, bureau, Open Finance e dados internos sob o mesmo plano de controle.</p>
+        
+        <p class="prod-band__areas">Áreas atendidas: <strong>originação PF, esteira de crédito PJ, mesa de crédito, cartão e limite, consignado, antecipação de recebíveis, recuperação.</strong></p>
+      </div>
+    </section>
+
+    <!-- ====================================================== -->
+    <!-- §3 PROBLEM                                              -->
+    <!-- ====================================================== -->
+    <section class="prod-sec prod-sec--light" aria-labelledby="problem-headline" data-screen-label="03 O problema">
+      <div class="container">
+        <header class="prod-sec__head">
+          <span class="pill">
+            <img class="pill-gem" src="../assets/images/gema-full-color.png" alt="" aria-hidden="true">
+            O problema
+          </span>
+          <h2 id="problem-headline">Política em PDF<span class="accent">não decide crédito.</span></h2>
+        </header>
+        <p style="max-width:68ch;margin:0 auto;font-size:var(--fs-lead);line-height:1.7;color:var(--cinza-700);text-align:left;">Na maior parte das instituições financeiras brasileiras, a política de crédito vive em documento aprovado pelo comitê, as exceções vivem em planilhas mantidas por analistas seniores, e o motor de decisão executa o que o time conseguiu traduzir em regra no fornecedor do core bancário. Quando a política muda, ninguém sabe se o motor mudou junto. Quando a fiscalização pede a base de uma decisão de seis meses atrás, o time reconstrói. Quando o analista de crédito sai, vai embora com a regra na cabeça. O Mosaico foi construído para que a política seja a fonte da decisão, não uma referência que a decisão tenta seguir.</p>
+      </div>
+    </section>
+
+    <!-- ====================================================== -->
+    <!-- §4 HOW IT WORKS                                         -->
+    <!-- ====================================================== -->
+    <section class="prod-sec prod-sec--gray" aria-labelledby="how-headline" data-screen-label="04 Como funciona">
+      <div class="container">
+        <header class="prod-sec__head">
+          <span class="pill">
+            <img class="pill-gem" src="../assets/images/gema-full-color.png" alt="" aria-hidden="true">
+            Como funciona
+          </span>
+          <h2 id="how-headline">Da política à decisão,<span class="accent">no mesmo motor.</span></h2>
+        </header>
+        <div class="prod-steps">
+          <article class="prod-step">
+            <span class="prod-step__num"></span>
+            <h3>Modele a política.</h3>
+            <p>Defina faixas de risco, cutoffs, exceções e combinações de fontes (bureau, Open Finance, dados internos) em código revisado por par. Versão e publicação são objeto de commit, com diff visível para o comitê de crédito.</p>
+          </article><article class="prod-step">
+            <span class="prod-step__num"></span>
+            <h3>Conecte os dados.</h3>
+            <p>Integre bureau de crédito, Open Finance, variáveis internas (histórico, saldo, garantia, score interno). O Mosaico orquestra a consulta no momento da decisão, com cache configurável por fonte e fallback definido pela política.</p>
+          </article><article class="prod-step">
+            <span class="prod-step__num"></span>
+            <h3>Decida e registre.</h3>
+            <p>Cada solicitação recebe decisão (aprovado, recusado, contraoferta, revisão manual) com a política aplicada, os fatores ponderados e o responsável. Override por analista, quando permitido pela política, fica registrado como exceção rastreável.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================== -->
+    <!-- §5 PILLARS                                              -->
+    <!-- ====================================================== -->
+    <section class="prod-sec prod-sec--light" aria-labelledby="pillars-headline" data-screen-label="05 Pilares">
+      <div class="container">
+        <header class="prod-sec__head">
+          <span class="pill">
+            <img class="pill-gem" src="../assets/images/gema-full-color.png" alt="" aria-hidden="true">
+            Pilares de valor
+          </span>
+          <h2 id="pillars-headline">Quatro princípios<span class="accent">que estruturam o motor.</span></h2>
+        </header>
+        <div class="prod-pillars">
+          <article class="prod-pillar">
+            <span class="prod-pillar__tag">01</span>
+            <h3>Policy-as-code.</h3>
+            <p>Política versionada em código, revisão por par, diff por commit. Comitê aprova mudança sabendo o que muda.</p>
+          </article><article class="prod-pillar">
+            <span class="prod-pillar__tag">02</span>
+            <h3>Bureau, Open Finance e dados internos no mesmo motor.</h3>
+            <p>Fontes externas e internas combinadas na mesma decisão, sem ETL paralelo.</p>
+          </article><article class="prod-pillar">
+            <span class="prod-pillar__tag">03</span>
+            <h3>Modelo padrão ou seu próprio modelo.</h3>
+            <p>Motor de scoring pronto para o segmento financeiro brasileiro. Modelo proprietário hospedado sob a mesma governança, com versionamento e métricas de performance.</p>
+          </article><article class="prod-pillar">
+            <span class="prod-pillar__tag">04</span>
+            <h3>Decisão auditável por evento.</h3>
+            <p>Cada decisão registra política, fatores, fontes e responsável. Auditoria interna e fiscalização externa olham o mesmo registro.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================== -->
+    <!-- §6 CASES OF USE                                         -->
+    <!-- ====================================================== -->
+    <section class="prod-sec prod-sec--gray" aria-labelledby="cases-headline" data-screen-label="06 Casos de uso">
+      <div class="container">
+        <header class="prod-sec__head">
+          <span class="pill">
+            <img class="pill-gem" src="../assets/images/gema-full-color.png" alt="" aria-hidden="true">
+            Casos de uso
+          </span>
+          <h2 id="cases-headline">O mesmo motor para<span class="accent">originação, análise e revisão.</span></h2>
+        </header>
+        <ul class="prod-cases">
+          <li><strong>Crédito PF originação digital:</strong> decisão em segundos com bureau, Open Finance e dados de relacionamento, com política calibrada por canal.</li><li><strong>Crédito PJ esteira de fornecedor:</strong> análise de risco de fornecedor B2B com dados de bureau corporativo, demonstrativos e relacionamento histórico.</li><li><strong>Cartão e limite rotativo:</strong> definição de limite inicial, aumento programado e revisão periódica sob a mesma política versionada.</li><li><strong>Consignado:</strong> decisão sob política específica de averbação, com cutoffs por convênio e validação de margem.</li><li><strong>Antecipação de recebíveis:</strong> análise de sacado, garantia e concentração no mesmo motor da originação.</li><li><strong>Mesa de crédito (revisão manual):</strong> o motor encaminha casos fora da política para revisão humana, com contexto e justificativa obrigatória na decisão.</li><li><strong>Recuperação e cobrança:</strong> mesma política, agora aplicada a segmentação por risco e propensão de retorno.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ====================================================== -->
+    <!-- §7 DIFFERENTIALS                                        -->
+    <!-- ====================================================== -->
+    <section id="diferenciais" class="prod-sec prod-sec--light" aria-labelledby="diff-headline" data-screen-label="07 Diferenciais">
+      <div class="container">
+        <header class="prod-sec__head">
+          <span class="pill">
+            <img class="pill-gem" src="../assets/images/gema-full-color.png" alt="" aria-hidden="true">
+            Diferenciais
+          </span>
+          <h2 id="diff-headline">O que o motor de crédito<span class="accent">do core bancário não faz.</span></h2>
+        </header>
+        <div class="prod-diff">
+          <article class="prod-diff__block">
+            <span class="prod-diff__tag">Bloco A</span>
+            <h3>Policy-as-code com revisão por par.</h3>
+            <p>A política não é configuração em tela; é código em repositório. Mudança passa por revisão, deixa diff e fica versionada. Comitê de crédito aprova com pleno conhecimento do que muda.</p>
+          </article><article class="prod-diff__block">
+            <span class="prod-diff__tag">Bloco B</span>
+            <h3>Open Finance nativo.</h3>
+            <p>Não é integração feita por cima do motor; é fonte de primeira classe. Consentimento, fluxo OFB, normalização e cache estão no Mosaico, e a política aplica regra sobre dados consentidos sem ETL externo.</p>
+          </article><article class="prod-diff__block">
+            <span class="prod-diff__tag">Bloco C</span>
+            <h3>Modelo seu, governança nossa.</h3>
+            <p>Quando a operação tem modelo de scoring proprietário, o Mosaico hospeda. O modelo entra como artefato versionado, com histórico, métricas de performance (PSI, KS, AUC) e governança de promoção entre ambientes. Time de risco continua dono.</p>
+          </article><article class="prod-diff__block">
+            <span class="prod-diff__tag">Bloco D</span>
+            <h3>Mesma trilha para decisão automática e manual.</h3>
+            <p>Decisão automatizada e override de mesa de crédito vivem no mesmo registro. Auditoria não tem dois sistemas para conciliar.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================== -->
+    <!-- §8 GOVERNANCE                                           -->
+    <!-- ====================================================== -->
+    <section class="prod-sec prod-sec--gray" aria-labelledby="gov-headline" data-screen-label="08 Governança">
+      <div class="container">
+        <header class="prod-sec__head">
+          <span class="pill">
+            <img class="pill-gem" src="../assets/images/gema-full-color.png" alt="" aria-hidden="true">
+            Governança e auditoria
+          </span>
+          <h2 id="gov-headline">Cada decisão de crédito,<span class="accent">com responsável, política e fator.</span></h2>
+        </header>
+        <div class="prod-gov">
+          <p class="prod-gov__copy">O Mosaico registra, em cada decisão, a versão da política aplicada, os fatores que pesaram na avaliação, as fontes consultadas e o responsável quando há atuação humana. Comitê de crédito tem visibilidade contínua da política em produção e do impacto de cada mudança. Auditoria interna e fiscalização externa consultam o mesmo registro. O ofício que vier pedindo a base de uma decisão é respondido com extrato direto do motor.</p>
+          <ul class="prod-gov__list"><li>Versionamento de política por commit, com diff e responsável.</li><li>Aprovação de política em ambiente separado de produção (sandbox e produção).</li><li>Trilha de auditoria por evento (decisão, override, mudança de política, atualização de modelo).</li><li>Métricas de modelo (PSI, KS, AUC) acompanhadas em painel próprio.</li><li>Conformidade com BACEN, LGPD e regras de Open Finance desde a primeira decisão.</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================== -->
+    <!-- §9 ECOSYSTEM (dark, anchor quote)                       -->
+    <!-- ====================================================== -->
+    <section class="prod-sec prod-sec--dark" aria-labelledby="eco-headline" data-screen-label="09 Ecossistema">
+      <div class="container">
+        <header class="prod-sec__head">
+          <span class="pill pill--on-dark">
+            <img class="pill-gem" src="../assets/images/gema-full-color.png" alt="" aria-hidden="true">
+            Encaixe no ecossistema
+          </span>
+          <h2 id="eco-headline">O motor de decisão,<span class="accent">na camada utilitária da Fingate.</span></h2>
+        </header>
+        <p class="prod-eco__copy">O Mosaico consome o <a href="maestro.html">Maestro</a> para área, hierarquia e alçada do time de crédito (quem aprova exceção, quem revisa modelo, quem assina mudança de política). Decisões individuais e mudança de política podem ser encaminhadas ao <a href="figaro.html">Fígaro</a> para análise assistida, sob permissão explícita. Documentação de política, fluxograma e relatório de monitoramento vivem no <a href="libreto.html">Libreto</a>. Eventos de fraude detectados pela <a href="trama.html">Trama</a> enriquecem a decisão de crédito em tempo real. Operações que demandam evidência assinada (CCB, aditivo, contraoferta aceita) registram a formalização no <a href="signum.html">Signum</a>.</p>
+        <blockquote class="prod-eco__quote">
+          <p>Decisão de crédito que sua política reconhece.</p>
+        </blockquote>
+        <div class="prod-eco__chips" aria-label="Outros produtos da família">
+    <a class="prod-eco__chip" href="maestro.html">
+      <span class="prod-eco__chip-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#p-maestro"/></svg></span>
+      Maestro
+    </a>
+    <a class="prod-eco__chip" href="tempo.html">
+      <span class="prod-eco__chip-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#p-tempo"/></svg></span>
+      Tempo
+    </a>
+    <a class="prod-eco__chip" href="trama.html">
+      <span class="prod-eco__chip-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#p-trama"/></svg></span>
+      Trama
+    </a>
+    <a class="prod-eco__chip" href="agora.html">
+      <span class="prod-eco__chip-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#p-agora"/></svg></span>
+      Ágora
+    </a>
+    <a class="prod-eco__chip" href="atlas.html">
+      <span class="prod-eco__chip-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#p-atlas"/></svg></span>
+      Atlas
+    </a>
+    <a class="prod-eco__chip" href="figaro.html">
+      <span class="prod-eco__chip-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#p-figaro"/></svg></span>
+      Fígaro
+    </a>
+    <a class="prod-eco__chip" href="libreto.html">
+      <span class="prod-eco__chip-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#p-libreto"/></svg></span>
+      Libreto
+    </a>
+    <a class="prod-eco__chip" href="signum.html">
+      <span class="prod-eco__chip-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#p-signum"/></svg></span>
+      Signum
+    </a></div>
+      </div>
+    </section>
+
+    <!-- ====================================================== -->
+    <!-- §10 FAQ                                                 -->
+    <!-- ====================================================== -->
+    <section class="prod-sec prod-sec--light" aria-labelledby="faq-headline" data-screen-label="10 FAQ">
+      <div class="container">
+        <header class="prod-sec__head">
+          <span class="pill">
+            <img class="pill-gem" src="../assets/images/gema-full-color.png" alt="" aria-hidden="true">
+            Perguntas frequentes
+          </span>
+          <h2 id="faq-headline">Como o Mosaico<span class="accent">funciona na prática.</span></h2>
+        </header>
+        <div class="prod-faq__list">
+          <details class="prod-faq__item">
+            <summary>O Mosaico substitui o motor de crédito do meu core bancário?</summary>
+            <p>Em geral sim, ao longo da implantação. O Mosaico assume a decisão; o core bancário continua responsável pelo book contábil e pelo desembolso. Coexistência durante o piloto é o caminho usual.</p>
+          </details><details class="prod-faq__item">
+            <summary>Preciso de um time de data science para usar?</summary>
+            <p>Não. O Mosaico vem com motor de scoring padrão e biblioteca de políticas para o segmento financeiro brasileiro. Quando a operação tiver modelo proprietário, o time de risco continua dono; o Mosaico hospeda e governa.</p>
+          </details><details class="prod-faq__item">
+            <summary>Open Finance é integração separada?</summary>
+            <p>Não. Open Finance é fonte de primeira classe. Consentimento, leitura compartilhada e normalização são parte do Mosaico, não plug-in.</p>
+          </details><details class="prod-faq__item">
+            <summary>Como funciona a auditoria de decisão?</summary>
+            <p>Cada decisão registra versão da política aplicada, fatores ponderados, fontes consultadas e responsável. A trilha é consultável por solicitação, por período, por canal ou por filtro de fonte.</p>
+          </details><details class="prod-faq__item">
+            <summary>Em quanto tempo entra em produção?</summary>
+            <p>Implantação assistida. Piloto com uma esteira (originação PF, esteira PJ, cartão) costuma estar em produção em poucas semanas após o workshop de modelagem da política.</p>
+          </details><details class="prod-faq__item">
+            <summary>Posso versionar minha política em sandbox antes de promover para produção?</summary>
+            <p>Sim. O Mosaico opera com ambientes separados, promoção controlada e simulação de impacto antes da mudança entrar no ar.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================== -->
+    <!-- §11 CTA FINAL                                           -->
+    <!-- ====================================================== -->
+    <section class="prod-cta" aria-labelledby="cta-headline" data-screen-label="11 CTA">
+      <div class="container">
+        <div class="prod-cta__inner">
+          <span class="pill">
+            <img class="pill-gem" src="../assets/images/gema-full-color.png" alt="" aria-hidden="true">
+            Próximo passo
+          </span>
+          <h2 id="cta-headline">Coloque a política no motor.<span class="accent">Coloque o motor sob auditoria.</span></h2>
+          <p>Veja o Mosaico aplicando a política da sua operação sobre uma carteira real, com bureau, Open Finance e dados internos no mesmo motor. Em 30 minutos no WhatsApp, mapeamos sua esteira de crédito.</p>
+          <a class="btn btn--menta"
+             href="https://wa.me/5511936210224?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20do%20Mosaico%20no%20site%20da%20Fingate%20e%20quero%20falar%20com%20a%20equipe%20de%20cr%C3%A9dito."
+             target="_blank" rel="noopener noreferrer"
+             data-origin="produto_mosaico_cta">
+            <svg aria-hidden="true"><use href="#i-wa"/></svg>
+            Falar no WhatsApp
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="site-footer__top">
+        <div class="site-footer__brand">
+          <img src="../assets/images/fingate-fundo-escuro.png" alt="Fingate">
+          <p>A camada utilitária modular do sistema financeiro brasileiro.</p>
+        </div>
+        <div class="site-footer__col">
+          <h4>Produtos</h4>
+          <ul>
+            <li><a href="maestro.html">Maestro</a></li>
+            <li><a href="figaro.html">Fígaro</a></li>
+            <li><a href="tempo.html">Tempo</a></li>
+            <li><a href="libreto.html">Libreto</a></li>
+            <li><a href="agora.html">Ágora</a></li>
+            <li><a href="atlas.html">Atlas</a></li>
+            <li><a href="mosaico.html" aria-current="page">Mosaico</a></li>
+            <li><a href="trama.html">Trama</a></li>
+            <li><a href="signum.html">Signum</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <h4>Institucional</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../sobre/index.html">Sobre</a></li>
+            <li><a href="index.html">Portfólio</a></li>
+            <li><a href="../fundacao/index.html">Fundação</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <h4>Contato</h4>
+          <ul>
+            <li>
+              <a href="https://wa.me/5511936210224?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Fingate%20e%20quero%20conversar%20com%20a%20equipe."
+                 target="_blank" rel="noopener noreferrer"
+                 data-origin="footer_mosaico">WhatsApp Business</a>
+            </li>
+            <li><a href="https://www.linkedin.com/company/fingate" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="#">Política de Privacidade</a></li>
+            <li><a href="#">Termos de Uso</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <span>Fingate Tecnologia e Desenvolvimento Financeiro · CNPJ 08.033.252/0001-29 · São Paulo, SP</span>
+        <span>© 2026 Fingate. Todos os direitos reservados.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js" defer></script>
+</body>
+</html>
